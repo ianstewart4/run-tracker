@@ -1,11 +1,15 @@
 body {
     background-color: #929383;
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
 
     h1 {
+        font-style: italic;
         display: flex;
         justify-content: center;
-        // align-self: center;
+        font-size: 50px;
+        margin-bottom: 5px;
+
     }
 }
 
@@ -15,6 +19,7 @@ body {
 
     .new-session {
         margin-left: 20px;
+
     }
 
     .session-form {
