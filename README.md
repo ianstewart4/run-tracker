@@ -4,7 +4,7 @@
 Track each run to monitor progress over time. 
 
 ### Demo
-https://ian-example-landing-page.netlify.app/
+https://my-run-tracker.herokuapp.com/
 
 ## Built With
 <ul>
