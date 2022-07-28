@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 require('dotenv').config()
 
 
@@ -49,22 +49,22 @@ app.post('/addSession', (request, response) => {
         .catch(error => console.error(error))
 })
 
-// app.put('/addOneLike', (request, response) => {
-//     db.collection('runSessions').updateOne({ stageName: request.body.stageNameS, birthName: request.body.birthNameS, likes: request.body.likesS }, {
-//         $set: {
-//             likes: request.body.likesS + 1
-//         }
-//     }, {
-//         sort: { _id: -1 },
-//         upsert: true
-//     })
-//         .then(result => {
-//             console.log('Added One Like')
-//             response.json('Like Added')
-//         })
-//         .catch(error => console.error(error))
+app.put('/editData', (request, response) => {
+    db.collection('runSessions').updateOne({ stageName: request.body.stageNameS, birthName: request.body.birthNameS, likes: request.body.likesS }, {
+        $set: {
+            likes: request.body.likesS + 1
+        }
+    }, {
+        sort: { _id: -1 },
+        upsert: true
+    })
+        .then(result => {
+            console.log('Added One Like')
+            response.json('Like Added')
+        })
+        .catch(error => console.error(error))
 
-// })
+})
 
 app.delete('/deleteSession', (request, response) => {
     db.collection('runSessions').deleteOne({ date: request.body.date })
@@ -76,6 +76,6 @@ app.delete('/deleteSession', (request, response) => {
 
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })

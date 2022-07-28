@@ -5,8 +5,8 @@ Array.from(deleteLine).forEach((element) => {
     element.addEventListener('click', deleteSession)
 })
 
-Array.from(thumbText).forEach((element) => {
-    element.addEventListener('click', addLike)
+Array.from(editLine).forEach((element) => {
+    element.addEventListener('click', editLineData)
 })
 
 async function deleteSession() {
@@ -35,25 +35,36 @@ async function deleteSession() {
 
 // Allows user to choose whether to include data from this session in the chart
 
-async function showData() {
-    const sName = this.parentNode.childNodes[1].innerText
-    const bName = this.parentNode.childNodes[3].innerText
-    const tLikes = Number(this.parentNode.childNodes[5].innerText)
-    try {
-        const response = await fetch('addOneLike', {
-            method: 'put',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                'stageNameS': sName,
-                'birthNameS': bName,
-                'likesS': tLikes
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
+async function editLineData() {
+    console.log('Editing line...')
+    const date = this.parentNode.parentNode.childNodes[1].innerText
+    const startTime = this.parentNode.parentNode.childNodes[3].innerText
+    const runTime = this.parentNode.parentNode.childNodes[5].innerText
+    const distance = this.parentNode.parentNode.childNodes[7].innerText
+    const avgHR = this.parentNode.parentNode.childNodes[9].innerText
+    const cals = this.parentNode.parentNode.childNodes[11].innerText
+    const notes = this.parentNode.parentNode.childNodes[13].innerText
 
-    } catch (err) {
-        console.log(err)
-    }
+    console.log(`Date: ${date}, startTime: ${startTime}, runTime: ${runTime}`)
+    console.log(`Distance: ${distance}, avgHR: ${avgHR}, cals: ${cals}`)
+    console.log(`Notes: ${notes}`)
+    // const bName = this.parentNode.childNodes[3].innerText
+    // const tLikes = Number(this.parentNode.childNodes[5].innerText)
+    // try {
+    //     const response = await fetch('editData', {
+    //         method: 'put',
+    //         headers: { 'Content-Type': 'application/json' },
+    //         body: JSON.stringify({
+    //             'stageNameS': sName,
+    //             'birthNameS': bName,
+    //             'likesS': tLikes
+    //         })
+    //     })
+    //     const data = await response.json()
+    //     console.log(data)
+    //     location.reload()
+
+    // } catch (err) {
+    //     console.log(err)
+    // }
 }
