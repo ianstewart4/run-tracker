@@ -3,9 +3,6 @@
 ## Description
 Track each run to monitor progress over time. 
 
-### Demo
-https://my-run-tracker.herokuapp.com/
-
 ## Built With
 <ul>
      <li>Javascript</li>
