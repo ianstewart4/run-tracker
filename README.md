@@ -16,9 +16,12 @@ https://my-run-tracker.herokuapp.com/
   
 ## Enhancements
 <ul>
+    <li>[ ] Add user authentication</li>
+    <li>[ ] Update to MVC architecture</li>
+    <li>[ ] Update front end from EJS to React</li>
     <li>[ ] Add edit functionality</li>
     <li>[ ] Update fonts</li>
-    <li>[ ] Add charts</li>
+    <li>[ ] Add data vizualisation</li>
 </ul>
 
 
