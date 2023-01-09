@@ -34,7 +34,7 @@ Track each run to monitor progress over time.
     <li>[ ] Update front end from EJS to React</li>
     <li>[ ] Add edit functionality</li>
     <li>[ ] Update fonts</li>
-    <li>[ ] Add data vizualisation</li>
+    <li>[ ] Add data visualization</li>
 </ul>
 
 
